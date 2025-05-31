@@ -1,8 +1,10 @@
 const express = require("express");
+const blogs = require("./routes/blogs");
 const app = express();
 const port = 3000;
 
 app.use(express.static("public")); // serving public files such as html, css, js or img
+app.use("/blogs", blogs); // Creating routes using Express.js Router
 
 app.get("/", (req, res) => {
   console.log("It's a get request");
