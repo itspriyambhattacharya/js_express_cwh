@@ -1,0 +1,15 @@
+{
+  "name": "02_basics",
+  "version": "1.0.0",
+  "description": "Learning get, post, put and delete requests and how to serve static files",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "Priyam Bhattacharya",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  }
+}
