@@ -1,0 +1,23 @@
+{
+  "name": "2_cwh_express",
+  "version": "1.0.0",
+  "description": "Learning Express.js basics",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itspriyambhattacharya/js_express_cwh.git"
+  },
+  "author": "Priyam Bhattacharya",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/itspriyambhattacharya/js_express_cwh/issues"
+  },
+  "homepage": "https://github.com/itspriyambhattacharya/js_express_cwh#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  }
+}
