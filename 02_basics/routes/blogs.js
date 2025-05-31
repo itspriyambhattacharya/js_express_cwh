@@ -17,4 +17,10 @@ router.get("/about", (req, res) => {
   res.send("About Blogs");
 });
 
+// define a slug
+router.get("/:slug", (req, res) => {
+  const data = req.params.slug;
+  res.send(`Blog ${data}`);
+});
+
 module.exports = router;
