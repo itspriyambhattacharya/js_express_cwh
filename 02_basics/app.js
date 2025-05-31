@@ -1,5 +1,5 @@
 const express = require("express");
-const blogs = require("./routes/blogs");
+const blogs = require("./routes/blog");
 const app = express();
 const port = 3000;
 
