@@ -7,7 +7,8 @@ app.use(express.static("public")); // serving public files such as html, css, js
 app.get("/", (req, res) => {
   console.log("It's a get request");
 
-  res.send("Hello Priyam");
+  //   res.send("Hello Priyam");
+  res.sendFile("/templates/index.html", { root: __dirname });
 });
 
 app.post("/", (req, res) => {
