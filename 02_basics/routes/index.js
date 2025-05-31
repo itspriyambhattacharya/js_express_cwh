@@ -11,10 +11,13 @@ router.use(timeLog);
 
 router.get("/", (req, res) => {
   console.log("It's a get request");
-
   //   res.send("Hello Priyam");
   res.sendFile(path.join(__dirname, "../public/templates/index.html"));
   console.log(__dirname);
+});
+
+router.get("/about", (req, res) => {
+  res.send("About Page");
 });
 
 router.get("/contact", (req, res) => {
