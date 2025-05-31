@@ -10,10 +10,14 @@ app.get("/", (req, res) => {
   console.log("It's a get request");
 
   //   res.send("Hello Priyam");
-  res.sendFile("/templates/index.html", { root: __dirname });
+  res.sendFile("/public/templates/index.html", { root: __dirname });
 });
 
-app.post("/", (req, res) => {
+app.get("/contact", (req, res) => {
+  res.redirect("/");
+});
+
+app.post("/contact", (req, res) => {
   res.send("Hello post");
   console.log("It's a post request");
 });
