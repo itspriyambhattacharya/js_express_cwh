@@ -4,6 +4,7 @@ const port = 3000; // configure the port
 
 app.set("view engine", "ejs"); //  set the view engine
 app.use(express.static("public")); // use for build-in middleware
+app.use(express.urlencoded({ extended: true })); // middleware to pase form data
 
 const idx = require("./routes/index"); // import the file
 
