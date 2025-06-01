@@ -10,3 +10,13 @@ body {
   background-color: #212121;
   color: #fff;
 }
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#registrationform fieldset {
+  padding: 20px;
+}
