@@ -12,7 +12,8 @@ router.use(timeLog);
 router.get("/", (req, res) => {
   console.log("It's a get request");
   //   res.send("Hello Priyam");
-  res.sendFile(path.join(__dirname, "../public/templates/index.html"));
+  // res.sendFile(path.join(__dirname, "../public/templates/index.html"));
+  res.render("index");
   console.log(__dirname);
 });
 
