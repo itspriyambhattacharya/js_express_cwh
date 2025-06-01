@@ -11,7 +11,7 @@ route.get("/", (req, res) => {
     firstName: "Priyam",
     lastName: "Bhattacharya",
     age: 23,
-    hobbies: ["H1", "H2", "H3"],
+    hobbies: ["H1", "H2", "H3", "H4"],
   };
   res.render("index", { test: obj });
 });
