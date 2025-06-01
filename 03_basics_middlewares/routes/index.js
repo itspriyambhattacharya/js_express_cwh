@@ -9,11 +9,11 @@ router.use((req, res, next) => {
 });
 
 router.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../public/templates/index.html"));
+  res.render("index");
 });
 
 router.get("/contact", (req, res) => {
-  res.sendFile(path.join(__dirname, "../public/templates/contact.html"));
+  res.render("contact");
 });
 
 module.exports = router;
