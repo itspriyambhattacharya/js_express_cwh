@@ -7,7 +7,13 @@ route.use((req, res, next) => {
 });
 
 route.get("/", (req, res) => {
-  res.render("index");
+  const obj = {
+    firstName: "Priyam",
+    lastName: "Bhattacharya",
+    age: 23,
+    hobbies: ["H1", "H2", "H3"],
+  };
+  res.render("index", { test: obj });
 });
 
 module.exports = route;
