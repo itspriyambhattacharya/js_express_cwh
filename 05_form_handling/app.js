@@ -2,10 +2,10 @@ const express = require("express"); // import express.js framework
 const app = express(); // initialize express app
 const port = 3000; // configure the port
 
-app.set("view engine", "ejs");
-app.use(express.static("public"));
+app.set("view engine", "ejs"); //  set the view engine
+app.use(express.static("public")); // use for build-in middleware
 
-const idx = require("./routes/index");
+const idx = require("./routes/index"); // import the file
 
 app.use("/", idx);
 
