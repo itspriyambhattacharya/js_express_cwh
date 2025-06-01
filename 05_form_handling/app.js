@@ -2,8 +2,11 @@ const express = require("express"); // import express.js framework
 const app = express(); // initialize express app
 const port = 3000; // configure the port
 
+app.set("view engine", "ejs");
+app.use(express.static("public"));
+
 app.get("/", (req, res) => {
-  res.send("Hello Priyam");
+  res.render("index");
 });
 
 app.listen(port, () => {
