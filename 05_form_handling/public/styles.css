@@ -19,4 +19,27 @@ body {
 
 #registrationform fieldset {
   padding: 20px;
+  width: 350px;
+}
+
+.form-holder {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-holder label {
+  margin-bottom: 5px;
+}
+
+.form-holder input {
+  border-radius: 7px;
+  padding: 5px 0px;
+}
+
+button[type="submit"] {
+  border-radius: 4px;
+  padding: 5px 20px;
+  cursor: pointer;
+  width: fit-content;
 }
