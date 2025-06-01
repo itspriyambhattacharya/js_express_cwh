@@ -7,12 +7,14 @@
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
-    <h1>Welcome: Dummy User</h1>
-    <h2>Age of Dummy User is : 33</h2>
+    <h1>Welcome: <%= test.firstName %> <%= test.lastName %></h1>
+    <h2>
+      Age of <%= test.firstName %> <%= test.lastName %> is : <%= test.age %>
+    </h2>
     <ul id="hobiesList">
-      <li class="hobby">Hobby1</li>
-      <li class="hobby">Hobby2</li>
-      <li class="hobby">Hobby3</li>
+      <% test.hobbies.forEach(item => { %>
+      <li class="hobby"><%= item %></li>
+      <% }) %>
     </ul>
     <script src="/scripts.js"></script>
   </body>
