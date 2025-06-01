@@ -7,6 +7,8 @@ const idx = require("./routes/index");
 app.use(express.json()); // Build-in middleware
 app.use(express.urlencoded({ extended: true })); // Built-in middleware
 app.use(express.static("public"));
+
+app.set("view engine", "ejs");
 app.use("/", idx);
 
 // Error handing middleware
