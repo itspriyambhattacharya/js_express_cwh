@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learning Form Handling with Express.js and EJS</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1 id="main-heading">Registration Form</h1>
+    <div id="registrationform" class="container">
+      <form action="/" method="post">
+        <fieldset>
+          <legend>Registration</legend>
+          <div id="form-name-section" class="form-holder">
+            <label for="name">Enter Name: </label>
+            <input type="text" name="name" id="name" />
+          </div>
+          <div id="form-email-section" class="form-holder">
+            <label for="email">Enter email: </label>
+            <input type="email" name="email" id="email" />
+          </div>
+          <div id="form-password-section" class="form-holder">
+            <label for="password">Enter Password: </label>
+            <input type="password" name="password" id="password" />
+          </div>
+          <div id="submit-btn" class="form-holder">
+            <button type="submit">Register</button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    <script src="/script.js"></script>
+  </body>
+</html>
