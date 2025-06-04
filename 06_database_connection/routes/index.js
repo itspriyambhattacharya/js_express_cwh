@@ -14,7 +14,12 @@ const pool = mysql2.createPool({
 // middleware
 route.use((req, res, next) => {
   console.log("Index middleware");
+  next();
+});
 
+// GET route
+route.get("/", (req, res) => {
+  res.render("index");
   pool.query("SELECT * FROM student", (err, rows, fields) => {
     if (err) {
       console.log("Database Query Error: ", err.message);
@@ -28,13 +33,6 @@ route.use((req, res, next) => {
       console.log("\n");
     });
   });
-
-  next();
-});
-
-// GET route
-route.get("/", (req, res) => {
-  res.render("index");
 });
 
 // POST route
