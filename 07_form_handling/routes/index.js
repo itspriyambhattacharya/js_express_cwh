@@ -29,6 +29,7 @@ route.post("/", (req, res) => {
   pool.query(sql, values, (err, results, fields) => {
     if (err) {
       console.log("Insertion to Database failed due to ", err.message);
+      res.status(500).send("Database error");
       return;
     }
     console.log("Record inserted succesfully");
