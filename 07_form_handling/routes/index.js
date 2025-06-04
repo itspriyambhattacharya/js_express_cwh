@@ -1,6 +1,16 @@
 const { log } = require("console");
 const express = require("express");
 const route = express.Router();
+const mysql2 = require("mysql2");
+
+const pool = mysql2.createPool({
+  host: "localhost",
+  port: 3306,
+  user: "root",
+  password: "mysql12345678",
+  database: "registration_db",
+  connectionLimit: 10,
+});
 
 // middleware
 route.use((req, res, next) => {
