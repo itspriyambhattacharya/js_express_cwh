@@ -1,4 +1,3 @@
-const { log } = require("console");
 const express = require("express");
 const route = express.Router();
 const mysql2 = require("mysql2");
