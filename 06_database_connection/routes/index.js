@@ -28,13 +28,13 @@ route.use((req, res, next) => {
 // GET route
 route.get("/", (req, res) => {
   res.render("index");
-  pool.query("SELECT * FROM student", (err, rows, fields) => {
+  pool.query("SELECT * FROM student", (err, results, fields) => {
     if (err) {
       console.log("Database Query Error: ", err.message);
       return;
     }
     // console.log(rows);
-    rows.forEach((obj) => {
+    results.forEach((obj) => {
       console.log(`Roll Number is: ${obj.rollNo}`);
       console.log(`Name is: ${obj.name}`);
       console.log(`Marks is: ${obj.marks}`);
