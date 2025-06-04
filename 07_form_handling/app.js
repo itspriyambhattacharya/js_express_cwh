@@ -8,7 +8,6 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 
 const idx = require("./routes/index");
-const { log } = require("console");
 app.use("/", idx);
 
 app.listen(port, () => {
