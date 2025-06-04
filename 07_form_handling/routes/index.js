@@ -22,4 +22,12 @@ route.get("/", (req, res) => {
   res.render("index");
 });
 
+route.post("/", (req, res) => {
+  console.log(req.body);
+  const { name, email, password, yr_income, vehicle, gender } = req.body;
+  console.log("Yearly income is", yr_income);
+
+  res.redirect("/");
+});
+
 module.exports = route;
