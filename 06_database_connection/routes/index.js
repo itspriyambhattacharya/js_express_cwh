@@ -17,6 +17,7 @@ const pool2 = mysql2.createPool({
   password: "mysql12345678",
   port: 3306,
   connectionLimit: 10,
+  database: "dummydb",
 });
 
 // middleware
@@ -47,14 +48,14 @@ route.get("/", (req, res) => {
 // POST route
 route.post("/", (req, res) => {
   const { name, email, password } = req.body;
-  const sql = `INSERT INTO dt1 (cname, cpassword, cemail) VALUES (${name}, ${password}, ${email})`;
-  pool2.query(sql, (err, results, fields) => {
+  const values = [name, password, email]; // prevent sql injection
+  const sql = `INSERT INTO dt1 (cname, cpassword, cemail) VALUES (?,?,?)`;
+  pool2.query(sql, values, (err, results, fields) => {
     if (err) {
       console.log("Can't insert record because ", err.message);
       return;
     }
     console.log("Record Inserted successfully");
-    alert("Record Inserted successfully.");
   });
   console.log(`Name is ${name}`);
 
