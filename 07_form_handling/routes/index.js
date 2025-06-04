@@ -9,7 +9,7 @@ route.use((req, res, next) => {
 });
 
 route.get("/", (req, res) => {
-  res.send("Hello World");
+  res.render("index");
 });
 
 module.exports = route;
