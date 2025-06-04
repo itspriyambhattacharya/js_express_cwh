@@ -11,6 +11,14 @@ const pool = mysql2.createPool({
   database: "college2",
 });
 
+const pool2 = mysql2.createPool({
+  host: "localhost",
+  user: "root",
+  password: "mysql12345678",
+  port: 3306,
+  connectionLimit: 10,
+});
+
 // middleware
 route.use((req, res, next) => {
   console.log("Index middleware");
@@ -23,6 +31,7 @@ route.get("/", (req, res) => {
   pool.query("SELECT * FROM student", (err, rows, fields) => {
     if (err) {
       console.log("Database Query Error: ", err.message);
+      return;
     }
     // console.log(rows);
     rows.forEach((obj) => {
@@ -38,6 +47,15 @@ route.get("/", (req, res) => {
 // POST route
 route.post("/", (req, res) => {
   const { name, email, password } = req.body;
+  const sql = `INSERT INTO dt1 (cname, cpassword, cemail) VALUES (${name}, ${password}, ${email})`;
+  pool2.query(sql, (err, rows, fields) => {
+    if (err) {
+      console.log("Can't insert record because ", err.message);
+      return;
+    }
+    console.log("Record Inserted successfully");
+    alert("Record Inserted successfully.");
+  });
   console.log(`Name is ${name}`);
 
   res.redirect("/");
