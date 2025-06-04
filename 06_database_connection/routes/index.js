@@ -48,7 +48,7 @@ route.get("/", (req, res) => {
 route.post("/", (req, res) => {
   const { name, email, password } = req.body;
   const sql = `INSERT INTO dt1 (cname, cpassword, cemail) VALUES (${name}, ${password}, ${email})`;
-  pool2.query(sql, (err, rows, fields) => {
+  pool2.query(sql, (err, results, fields) => {
     if (err) {
       console.log("Can't insert record because ", err.message);
       return;
