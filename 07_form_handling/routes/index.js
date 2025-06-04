@@ -25,9 +25,21 @@ route.get("/", (req, res) => {
 route.post("/", (req, res) => {
   console.log(req.body);
   const { name, email, password, yr_income, vehicle, gender } = req.body;
-  console.log("Yearly income is", yr_income);
+  const sql = `INSERT INTO users (name, email, password, yrIncome, gender) VALUES (?,?,?,?,?)`;
+  const values = [name, email, password, yr_income, vehicle, gender];
+  pool.query(sql, values, (err, results, fields) => {
+    if (err) {
+      console.log("Insertion to Database failed due to ", err.message);
+      return;
+    }
+    console.log("Record inserted succesfully");
+  });
 
-  res.redirect("/");
+  res.redirect("/success");
+});
+
+route.get("/success", (req, res) => {
+  res.send("Registered Successfully.");
 });
 
 module.exports = route;
